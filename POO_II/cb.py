@@ -22,12 +22,13 @@ class CuentaBancaria(ABC):
 
     @abstractmethod
     def extraer(self,monto):
+        pass
         # if monto <= self.obtener_saldo():
         #     self._saldo -= monto
         #     print(f"Se ha extraido {monto} de la cuenta de {self._nombre_titular}, su saldo acutal es de: {self.obtener_saldo()}")
         # else:
         #     print("No posee saldo suficiente para esta operación")
-        pass
+        
 
     def _caclular_edad(self):
         fecha_actual = date.today()

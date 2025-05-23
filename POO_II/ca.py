@@ -8,18 +8,18 @@ class CuentaAhorro(CuentaBancaria):
     def depositar(self, monto):
         if monto > 0:
             self._saldo += monto
-            print(f"Se ha depositado {monto} a la cuenta de ahorro de {self._nombre_titular}, su saldo es de: {self.obtener_saldo()}")
+            print(f"Se ha depositado ${monto} a la cuenta de ahorro de {self._nombre_titular}, su saldo es de: ${self.obtener_saldo()}")
         else:
             print("El monto a depositar debe ser mayor a 0")
     
     def extraer(self, monto):
         if monto <= self.obtener_saldo():
             self._saldo -= monto
-            print(f"Se ha extraido {monto} de la cuenta de ahorro de {self._nombre_titular}, su saldo actual es de: {self.obtener_saldo()}")
+            print(f"Se ha extraido ${monto} de la cuenta de ahorro de {self._nombre_titular}, su saldo actual es de: ${self.obtener_saldo()}")
         else:
             print("No posee saldo suficiente para esta operación")
     
     def calcular_interes(self):
         interes = self._saldo * self._tasa_interes
-        print(f"El interés generado es: {interes}")
+        # print(f"El interés generado es: ${interes}")
         return interes

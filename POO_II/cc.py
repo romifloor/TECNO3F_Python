@@ -8,7 +8,7 @@ class CuentaCorriente(CuentaBancaria):
     def depositar(self, monto):
         if monto > 0:
             self._saldo += monto
-            print(f"Se ha depositado {monto} a la cuenta de {self._nombre_titular}, su saldo es de: {self.obtener_saldo()}")
+            print(f"Se ha depositado ${monto} a la cuenta de {self._nombre_titular}, su saldo es de: ${self.obtener_saldo()}")
         else:
             print("El monto a depositar debe ser mayor a 0")
     
@@ -16,7 +16,7 @@ class CuentaCorriente(CuentaBancaria):
     def extraer(self, monto):
         if monto <= self.obtener_saldo() and monto <= self._limite_extraccion:
             self._saldo -= monto
-            print(f"Se ha extraido {monto} de la cuenta de {self._nombre_titular}, su saldo actual es de: {self.obtener_saldo()}")
+            print(f"Se ha extraido ${monto} de la cuenta de {self._nombre_titular}, su saldo actual es de: ${self.obtener_saldo()}")
         
         else:
             if monto > self._limite_extraccion:
