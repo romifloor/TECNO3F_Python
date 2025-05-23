@@ -1,6 +1,7 @@
+from abc import ABC, abstractmethod
 from datetime import date, datetime
 
-class CuentaBancaria:
+class CuentaBancaria(ABC):
     def __init__(self,nombre_titular,dni_titular, fecha_nacimiento, saldo=0):
         self._nombre_titular = nombre_titular       #atributo privado
         self._dni_titular = dni_titular             #atributo privado
@@ -10,19 +11,23 @@ class CuentaBancaria:
     def obtener_saldo(self):
         return self._saldo
     
+    @abstractmethod
     def depositar(self,monto):
-        if monto > 0:
-            self._saldo += monto
-            print(f"Se ha depositado {monto} a la cuenta de {self._nombre_titular}, su saldo es de: {self.obtener_saldo()}")
-        else:
-            print("El monto a depositar debeser mayor a 0")
+        pass
+        # if monto > 0:
+        #     self._saldo += monto
+        #     print(f"Se ha depositado {monto} a la cuenta de {self._nombre_titular}, su saldo es de: {self.obtener_saldo()}")
+        # else:
+        #     print("El monto a depositar debeser mayor a 0")
 
+    @abstractmethod
     def extraer(self,monto):
-        if monto <= self.obtener_saldo():
-            self._saldo -= monto
-            print(f"Se ha extraido {monto} de la cuenta de {self._nombre_titular}, su saldo acutal es de: {self.obtener_saldo()}")
-        else:
-            print("No posee saldo suficiente para esta operación")
+        # if monto <= self.obtener_saldo():
+        #     self._saldo -= monto
+        #     print(f"Se ha extraido {monto} de la cuenta de {self._nombre_titular}, su saldo acutal es de: {self.obtener_saldo()}")
+        # else:
+        #     print("No posee saldo suficiente para esta operación")
+        pass
 
     def _caclular_edad(self):
         fecha_actual = date.today()
